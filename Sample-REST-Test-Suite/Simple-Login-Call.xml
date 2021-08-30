@@ -91,6 +91,67 @@ NOTE: If you would like to run the Login step without as a standalone step pleas
       <action>stop</action>
     </con:config>
   </con:testStep>
+  <con:testStep type="restrequest" name="REST Request" id="51d7087d-2316-48a1-ac7a-2ba88c1742e3">
+    <con:settings/>
+    <con:config service="Ecommerce" methodName="Login" resourcePath="/login/" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="REST Request" id="0a38e0e1-d0ff-4981-88e4-bbaf474aa119" mediaType="application/json">
+        <con:settings/>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>http://localhost:8084</con:endpoint>
+        <con:request/>
+        <con:assertion type="Valid HTTP Status Codes" id="c7d212b0-ce7d-4293-947a-0b88a8776561" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="bb5ae773-2656-4629-845e-31110590eae3" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="REST2" id="8bb06b5d-ec66-4431-b76b-eb5a2624d498">
+    <con:settings/>
+    <con:config service="Ecommerce" methodName="Login" resourcePath="/login/" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="REST2" id="6e0d8b89-13b3-4a8c-a6f8-34a4b6d33856" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>http://localhost:8084</con:endpoint>
+        <con:request/>
+        <con:assertion type="Valid HTTP Status Codes" id="9f56bdd2-2dea-4fc1-8697-61fc47f0c913" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="8edad667-af2f-4d41-be17-7bb0fcd46f85" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="password" value="21"/>
+          <con:entry key="username" value="12"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
   <con:properties/>
   <con:reportParameters/>
   <con:breakPoints>
