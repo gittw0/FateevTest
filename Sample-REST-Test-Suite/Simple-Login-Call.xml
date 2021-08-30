@@ -91,6 +91,33 @@ NOTE: If you would like to run the Login step without as a standalone step pleas
       <action>stop</action>
     </con:config>
   </con:testStep>
+  <con:testStep type="restrequest" name="REST Request" id="9ff1d245-32e3-4aa3-9db7-cc2f2dbeeef6">
+    <con:settings/>
+    <con:config service="Ecommerce" methodName="Login" resourcePath="/login/" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="REST Request" id="0d5cfca4-2997-4b80-9632-c872637c2e79" mediaType="application/json">
+        <con:settings/>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>http://localhost:8084</con:endpoint>
+        <con:request/>
+        <con:assertion type="Valid HTTP Status Codes" id="0c2e88fe-c0fc-4601-8b4c-653913266bc4" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="64f4139f-81d5-4f31-ad14-4259127e613b" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
   <con:properties/>
   <con:reportParameters/>
   <con:breakPoints>
